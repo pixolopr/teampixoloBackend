@@ -16,4 +16,16 @@
  	 	 $message['json']=$this->model->get_all(); 
  	 	 $this->load->view('json', $message); 
  	 } 
+ 	 public function getprojectsbyuserid()
+ 	 {
+ 	 	$id = $this->input->get('id');
+ 	 	$message['json'] = $this->model->getprojectsbyuserid($id);
+ 	 	$this->load->view('json', $message); 
+ 	 }
+ 	 public function gettasksbyprojectid()
+ 	 {
+ 	 	$id = $this->input->get('id');
+ 	 	$message['json'] = $this->model->gettasksbyprojectid($id);
+ 	 	$this->load->view('json', $message); 
+ 	 }
  }
