@@ -144,8 +144,9 @@ class PIXOLO_Model extends CI_Model
     */
     public function get_many_by_two()
     {
-        $this->_set_where(func_get_args(0),func_get_args(1));
-        $this->_set_where(func_get_args(2),func_get_args(3));
+        $args = func_get_args();
+        $this->db->where($args[0],$args[1]);
+        $this->db->where($args[2],$args[3]);
         return $this->get_all();
     }
     /*Fetch records by sending three field values
@@ -153,9 +154,10 @@ class PIXOLO_Model extends CI_Model
     */
     public function get_many_by_three()
     {
-        $this->_set_where(func_get_args(0),func_get_args(1));
-        $this->_set_where(func_get_args(2),func_get_args(3));
-        $this->_set_where(func_get_args(4),func_get_args(5));
+        $args = func_get_args();
+        $this->db->where($args[0],$args[1]);
+        $this->db->where($args[2],$args[3]);
+        $this->db->where($args[4],$args[5]);
         return $this->get_all();
     }
     /**
