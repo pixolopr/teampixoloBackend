@@ -24,6 +24,12 @@
        WHERE `tasks`.`projectid`= '.$id)->result();
  		return $query;
  	}
+
+ 	public function test($name,$lastname,$text,$timestamp,$status,$image)
+ 	{
+ 		$query = $this->db->query("INSERT INTO `test` (name, lastname, text, timestamp, status, image) VALUES ('$name', '$lastname','$text', now(), '$status', '$image')");
+ 		return query;
+ 	}
  } 
  
  ?>
